@@ -1,0 +1,81 @@
+ARCHNEMIX PROPRIETARY LICENSE
+Version 1.0, 2026
+
+Copyright (c) 2026 Archnemix. All rights reserved.
+
+This software and all associated source code, documentation, configuration files, workflows, scripts, assets, and any other materials contained in this repository (collectively, the "Software") are the exclusive proprietary property of Archnemix.
+
+Archnemix ShortGen is a product of the Archnemix brand.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT THIS REPOSITORY IS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This repository contains the overnight batch processing pipeline for Archnemix ShortGen — an automated system for generating Reddit-style YouTube Shorts from text scripts using AI-driven text-to-speech, forced alignment, subtitle generation, and video encoding.
+
+This repository is made PUBLIC solely to take advantage of GitHub's unlimited Actions minutes for public repositories. The public visibility of this repository does NOT constitute an open-source release, a public domain dedication, or a grant of any rights whatsoever to any party.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+RESTRICTIONS — ALL OF THE FOLLOWING ARE STRICTLY PROHIBITED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USE – You may not use, run, execute, or operate this Software or any part of it for any purpose, commercial or non-commercial, without explicit prior written permission from Archnemix.
+
+COPYING & REPRODUCTION – You may not copy, reproduce, duplicate, or extract any portion of this Software, in whole or in part, in any form or medium.
+
+MODIFICATION – You may not modify, adapt, translate, reverse-engineer, decompile, disassemble, or create derivative works based on this Software.
+
+DISTRIBUTION – You may not distribute, publish, sublicense, sell, rent, lease, transfer, or otherwise make this Software available to any third party.
+
+COMMERCIAL EXPLOITATION – You may not use this Software or any component of it to build, train, power, or improve any product, service, model, or system — whether offered commercially or otherwise.
+
+FORKING & CLONING FOR USE – You may not fork or clone this repository for the purpose of using, running, or deploying the Software. Viewing the code via GitHub's interface does not grant any license to use it.
+
+REMOVAL OF NOTICES – You may not remove, alter, or obscure any copyright notice, license notice, trademark, or proprietary legend contained in this Software.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHAT IS PERMITTED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You may view the contents of this repository for personal, educational, or research purposes only, provided you do not reproduce, copy, or use any part of the code or assets.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INTELLECTUAL PROPERTY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+All intellectual property rights in and to the Software, including but not limited to patents, copyrights, trademarks, trade secrets, and any other proprietary rights, are and shall remain exclusively owned by Archnemix.
+
+The Archnemix name, logo, and all related product names, design marks, and slogans are trademarks of Archnemix. Nothing in this repository grants any right or license to use any Archnemix trademark.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NO WARRANTY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. ARCHNEMIX MAKES NO WARRANTIES REGARDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LIMITATION OF LIABILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IN NO EVENT SHALL ARCHNEMIX BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENFORCEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Any unauthorized use, copying, modification, or distribution of this Software constitutes copyright infringement and may result in severe civil and criminal penalties. Archnemix reserves the right to pursue all available legal remedies against any party that violates the terms of this license.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For licensing inquiries or permission requests, contact Archnemix through the official channels:
+
+Email: ytshort.archnemix@gmail.com
+
+Email: archnemix@gmail.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+© 2026 Archnemix. All rights reserved.
+Archnemix ShortGen is a proprietary tool under the Archnemix brand.
