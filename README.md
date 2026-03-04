@@ -69,64 +69,6 @@ ARCHX-XX-0-X-00-XXXX
 Example: ARCHX-KQ-0-T-00-VZMR
 ```
 
-## GitHub Repo Structure
-
-```
-archnemix-pipeline-maintenance/
-├── Videos/
-│   ├── batch1/
-│   │   ├── batch_meta.json          ← created_at timestamp
-│   │   ├── ARCHX-KQ-0-T-00-VZMR/
-│   │   │   └── manifest.json        ← job data
-│   │   └── ARCHX-AB-0-C-00-DEFG/
-│   │       └── manifest.json
-│   └── batch2/
-│       ├── batch_meta.json
-│       └── ...
-├── backgrounds/
-│   ├── minecraft_1.mp4
-│   └── ...
-├── .github/
-│   ├── workflows/
-│   │   ├── overnight_batch.yml      ← batch processor
-│   │   └── build_docker.yml         ← Docker image builder
-│   └── scripts/
-│       ├── find_ready_batch.py
-│       └── cleanup_batch_folder.py
-├── Dockerfile
-├── preextract_mfa.py
-└── process_batch.py
-```
-
-## HF Dataset Repo Structure (archnemix-overnight)
-
-```
-YTShortMakerArchx/archnemix-overnight/
-├── ARCHX-KQ-0-T-00-VZMR/
-│   ├── video.mp4        ← completed video (deleted after 30h by cleanup cron)
-│   └── status.json      ← job status
-└── ARCHX-AB-0-C-00-DEFG/
-    └── status.json      ← failed status (no video.mp4)
-```
-
-## GitHub Secrets Required
-
-| Secret | Description |
-|--------|-------------|
-| `HF_TOKEN_WR` | HuggingFace write token — uploads results to dataset |
-| `HF_TOKEN_RE` | HuggingFace read token — controller reads status |
-| `GITHUB_TOKEN` | Auto-injected by GitHub Actions |
-
-## HF Space Secrets Required (archnemix-overnight-controller)
-
-| Secret | Description |
-|--------|-------------|
-| `GH_TOKEN` | GitHub PAT with `repo` write scope |
-| `GH_REPO` | e.g. `YTShortMakerArchx/archnemix-pipeline-maintenance` |
-| `HF_TOKEN_RE` | HuggingFace read token |
-| `HF_DATASET_REPO` | e.g. `YTShortMakerArchx/archnemix-overnight` |
-| `APP_KEY` | Shared secret for frontend auth |
-
 ## Voices Available
 
 | Key | Kokoro Model | Description |
