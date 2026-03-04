@@ -25,3 +25,37 @@
 ---
 
 ## Repository Structure (Public)
+
+archnemix-overnight-shortgen/
+├─ README.md # This public documentation
+├─ LICENSE # Proprietary license
+└─ .github/workflows/
+└─ overnight_batch.yml # Skeleton workflow, ~25 lines
+
+
+> ⚠️ No actual processing scripts or sensitive commands are included in this public repo.
+
+---
+
+## Usage (Public)
+
+You can manually trigger the workflow via the GitHub Actions tab.  
+**Note:** You will need appropriate secrets (stored privately) to pull the Docker image and run the pipeline. Without these secrets, the workflow cannot execute the proprietary logic.
+
+---
+
+## License
+
+This repository is covered under the **[Archnemix Proprietary License v1.0](LICENSE)**.  
+
+- You may **view** the workflow and repository structure for educational purposes.  
+- You **cannot use, copy, fork, or reproduce** any part of this repository to run the ShortGen pipeline without explicit permission.  
+
+---
+
+## Contact
+
+For licensing or inquiries:  
+
+- ytshort.archnemix@gmail.com  
+- archnemix@gmail.com  
