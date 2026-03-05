@@ -26,7 +26,51 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Find ready batch
+        id: find_batch
+        run: |
+          BATCH_DIR=""
+          BATCH_NAME=""
+          NOW=$(date +%s)
+
+          if [ -d "Videos" ]; then
+            for batch in $(ls -d Videos/batch* 2>/dev/null | sort); do
+              # Count job folders (dirs only, exclude batch_meta.json)
+              JOB_COUNT=$(find "$batch" -mindepth 1 -maxdepth 1 -type d | wc -l)
+
+              # Get batch creation time from batch_meta.json
+              META="$batch/batch_meta.json"
+              if [ -f "$META" ]; then
+                CREATED_AT=$(python3 -c "import json; d=json.load(open('$META')); print(int(d.get('created_at', 0)))" 2>/dev/null || echo 0)
+              else
+                CREATED_AT=0
+              fi
+
+              AGE=$(( NOW - CREATED_AT ))
+
+              echo "Batch: $batch | Jobs: $JOB_COUNT | Age: ${AGE}s"
+
+              # Fire if full (>=5) OR timed out (>3600s) with at least 1 job
+              if [ "$JOB_COUNT" -ge 5 ] || ( [ "$AGE" -ge 3600 ] && [ "$JOB_COUNT" -ge 1 ] ); then
+                BATCH_DIR="$(pwd)/$batch"
+                BATCH_NAME=$(basename "$batch")
+                echo "Selected: $BATCH_NAME ($JOB_COUNT jobs, age ${AGE}s)"
+                break
+              fi
+            done
+          fi
+
+          echo "batch_dir=$BATCH_DIR" >> $GITHUB_OUTPUT
+          echo "batch_name=$BATCH_NAME" >> $GITHUB_OUTPUT
+
+      - name: Skip if no batch ready
+        if: steps.find_batch.outputs.batch_dir == ''
+        run: |
+          echo "No batch ready yet — exiting cleanly."
+          exit 0
+
       - name: Run pipeline
+        if: steps.find_batch.outputs.batch_dir != ''
         run: |
           docker run --rm \
             -e HF_TOKEN_WR="${{ secrets.HF_TOKEN_WR }}" \
@@ -35,6 +79,7 @@ jobs:
             -e GH_REPO="${{ github.repository }}" \
             -e HF_DATASET_REPO="${{ secrets.HF_DATASET_REPO }}" \
             -e APP_KEY="${{ secrets.APP_KEY }}" \
+            -e BATCH_DIR="/workspace/Videos/${{ steps.find_batch.outputs.batch_name }}" \
             -v ${{ github.workspace }}/Videos:/workspace/Videos \
             -v ${{ github.workspace }}/backgrounds:/workspace/backgrounds \
             ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest
