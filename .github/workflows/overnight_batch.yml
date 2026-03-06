@@ -69,11 +69,22 @@ jobs:
           batch_name = "${{ steps.find_batch.outputs.batch_name }}"
           manifests  = glob.glob(f"Videos/{batch_name}/*/manifest.json")
 
+          # Normalize old-style names to mc naming scheme
+          bg_name_map = {
+              "minecraft_1.mp4": "mc1.mp4",
+              "minecraft_2.mp4": "mc2.mp4",
+              "minecraft_3.mp4": "mc3.mp4",
+              "minecraft_4.mp4": "mc4.mp4",
+              "minecraft_5.mp4": "mc5.mp4",
+              "minecraft_6.mp4": "mc6.mp4",
+          }
+
           backgrounds_needed = set()
           for m in manifests:
               try:
-                  data = json.load(open(m))
-                  bg   = data.get("background", "mc1.mp4")
+                  data   = json.load(open(m))
+                  bg_raw = data.get("background", "mc1.mp4")
+                  bg     = bg_name_map.get(bg_raw, bg_raw)
                   backgrounds_needed.add(bg)
               except Exception as e:
                   print(f"Could not read {m}: {e}")
@@ -97,6 +108,7 @@ jobs:
                   print(f"  Moved to {dst}")
               print(f"  Done: {bg}")
 
+          # Clean up empty minecraft subdir
           mc_dir = "backgrounds/minecraft"
           if os.path.isdir(mc_dir) and not os.listdir(mc_dir):
               os.rmdir(mc_dir)
