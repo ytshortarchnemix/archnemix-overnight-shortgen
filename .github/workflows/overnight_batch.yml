@@ -1,20 +1,16 @@
 name: ArchNemix Overnight Batch
-
 on:
   push:
     paths:
       - 'Videos/**'
   schedule:
     - cron: '0 * * * *'
-
 concurrency:
   group: batch-processor
   cancel-in-progress: false
-
 jobs:
   run:
     runs-on: ubuntu-latest
-
     steps:
       - name: Login to container registry
         uses: docker/login-action@v3
@@ -32,25 +28,17 @@ jobs:
           BATCH_DIR=""
           BATCH_NAME=""
           NOW=$(date +%s)
-
           if [ -d "Videos" ]; then
             for batch in $(ls -d Videos/batch* 2>/dev/null | sort); do
-              # Count job folders (dirs only, exclude batch_meta.json)
               JOB_COUNT=$(find "$batch" -mindepth 1 -maxdepth 1 -type d | wc -l)
-
-              # Get batch creation time from batch_meta.json
               META="$batch/batch_meta.json"
               if [ -f "$META" ]; then
                 CREATED_AT=$(python3 -c "import json; d=json.load(open('$META')); print(int(d.get('created_at', 0)))" 2>/dev/null || echo 0)
               else
                 CREATED_AT=0
               fi
-
               AGE=$(( NOW - CREATED_AT ))
-
               echo "Batch: $batch | Jobs: $JOB_COUNT | Age: ${AGE}s"
-
-              # Fire if full (>=5) OR timed out (>3600s) with at least 1 job
               if [ "$JOB_COUNT" -ge 5 ] || ( [ "$AGE" -ge 3600 ] && [ "$JOB_COUNT" -ge 1 ] ); then
                 BATCH_DIR="$(pwd)/$batch"
                 BATCH_NAME=$(basename "$batch")
@@ -59,7 +47,6 @@ jobs:
               fi
             done
           fi
-
           echo "batch_dir=$BATCH_DIR" >> $GITHUB_OUTPUT
           echo "batch_name=$BATCH_NAME" >> $GITHUB_OUTPUT
 
@@ -68,6 +55,44 @@ jobs:
         run: |
           echo "No batch ready yet — exiting cleanly."
           exit 0
+
+      - name: Download background videos
+        if: steps.find_batch.outputs.batch_dir != ''
+        run: |
+          pip install huggingface_hub --quiet
+          python3 << 'EOF'
+          from huggingface_hub import hf_hub_download
+          import json, os, glob
+
+          token      = "${{ secrets.HF_TOKEN_RE }}"
+          repo       = "YTShortMakerArchx/BG_VIDS_ARCHX_YT"
+          batch_name = "${{ steps.find_batch.outputs.batch_name }}"
+          manifests  = glob.glob(f"Videos/{batch_name}/*/manifest.json")
+
+          backgrounds_needed = set()
+          for m in manifests:
+              try:
+                  data = json.load(open(m))
+                  bg   = data.get("background", "minecraft_1.mp4")
+                  backgrounds_needed.add(bg)
+              except Exception as e:
+                  print(f"Could not read {m}: {e}")
+
+          os.makedirs("backgrounds", exist_ok=True)
+
+          for bg in backgrounds_needed:
+              print(f"Downloading {bg}...")
+              hf_hub_download(
+                  repo_id=repo,
+                  filename=bg,
+                  repo_type="dataset",
+                  token=token,
+                  local_dir="backgrounds",
+              )
+              print(f"  Done: {bg}")
+
+          print(f"Downloaded {len(backgrounds_needed)} background(s): {backgrounds_needed}")
+          EOF
 
       - name: Run pipeline
         if: steps.find_batch.outputs.batch_dir != ''
@@ -78,7 +103,6 @@ jobs:
             -e GITHUB_TOKEN="${{ secrets.GH_PAT }}" \
             -e GH_REPO="${{ github.repository }}" \
             -e HF_DATASET_REPO="${{ secrets.HF_DATASET_REPO }}" \
-            -e APP_KEY="${{ secrets.APP_KEY }}" \
             -e BATCH_DIR="/workspace/Videos/${{ steps.find_batch.outputs.batch_name }}" \
             -v ${{ github.workspace }}/Videos:/workspace/Videos \
             -v ${{ github.workspace }}/backgrounds:/workspace/backgrounds \
