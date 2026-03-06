@@ -1,0 +1,11 @@
+{
+  "claim_code": "ARCHX-RS-0-Y-00-XEYQ",
+  "batch": "batch1",
+  "submitted_at": "2026-03-06T09:58:33.902637+00:00",
+  "script": "So this happened about three months ago, and I still don\u2019t know how to feel about it.\n\nI live in a small apartment building \u2014 only six units, two floors. Pretty quiet. Mostly working people. I work from home, so I\u2019m on my PC basically all day.\n\nOne night around 2:30 AM, my internet suddenly slowed to a crawl.",
+  "voice": "af_sky",
+  "speed": 1.2,
+  "aligner": "qwen",
+  "subtitle_style": {},
+  "background": "minecraft_1.mp4"
+}
