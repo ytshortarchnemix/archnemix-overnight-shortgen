@@ -1,0 +1,11 @@
+{
+  "claim_code": "ARCHX-YR-0-M-00-EXFI",
+  "batch": "batch1",
+  "submitted_at": "2026-03-06T20:35:42.537687+00:00",
+  "script": "They came back.\n\nAt this point I was convinced someone in the building was hacking me. Which is ridiculous because\u2026 who does that? For what? My 50 Mbps connection?\n\nBut then it got weirder.\n\nOne of the devices started uploading data.\n\nLike\u2026 a LOT.\n\nI could see real-time bandwidth usage, and it was spiking outbound traffic \u2014 not download, upload.\n\nThat\u2019s when I unplugged the router completely.\n\nNext morning, I went downstairs to ask around casually.",
+  "voice": "af_sarah",
+  "speed": 1.1,
+  "aligner": "mfa",
+  "subtitle_style": {},
+  "background": "minecraft_4.mp4"
+}
