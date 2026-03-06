@@ -69,7 +69,6 @@ jobs:
           batch_name = "${{ steps.find_batch.outputs.batch_name }}"
           manifests  = glob.glob(f"Videos/{batch_name}/*/manifest.json")
 
-          # Normalize old-style names to mc naming scheme
           bg_name_map = {
               "minecraft_1.mp4": "mc1.mp4",
               "minecraft_2.mp4": "mc2.mp4",
@@ -108,7 +107,6 @@ jobs:
                   print(f"  Moved to {dst}")
               print(f"  Done: {bg}")
 
-          # Clean up empty minecraft subdir
           mc_dir = "backgrounds/minecraft"
           if os.path.isdir(mc_dir) and not os.listdir(mc_dir):
               os.rmdir(mc_dir)
@@ -128,4 +126,13 @@ jobs:
             -e BATCH_DIR="/workspace/Videos/${{ steps.find_batch.outputs.batch_name }}" \
             -v ${{ github.workspace }}/Videos:/workspace/Videos \
             -v ${{ github.workspace }}/backgrounds:/workspace/backgrounds \
-            ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest
+            ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest \
+            2>&1 | tee pipeline.log
+
+      - name: Upload pipeline logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-logs-${{ steps.find_batch.outputs.batch_name || 'no-batch' }}
+          path: pipeline.log
+          retention-days: 7
