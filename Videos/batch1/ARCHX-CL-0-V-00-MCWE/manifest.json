@@ -1,0 +1,11 @@
+{
+  "claim_code": "ARCHX-CL-0-V-00-MCWE",
+  "batch": "batch1",
+  "submitted_at": "2026-03-06T20:36:04.921519+00:00",
+  "script": "Everyone acted normal. Old couple in 1A. College guy in 2B. A quiet dude in 1C I\u2019d barely spoken to.\n\nNothing suspicious.\n\nThat night, I decided to stay up.\n\n2:25 AM.\n\nNothing.\n\n2:28 AM.\n\nStill clean.\n\n2:31 AM.\n\nThe devices connected again.\n\nBut here\u2019s what I noticed this time \u2014 the signal strength.\n\nMy router shows rough signal strength for connected devices.\n\nAll three had full bars.\n\nWhich means\u2026 they weren\u2019t coming from another apartment.\n\nThey were very close.\n\nLike\u2026 inside my unit close.\n\nI checked my phone. My laptop. Smart TV. Everything matched known MAC addresses.\n\nThen I remembered something.\n\nTwo weeks earlier, maintenance had come to \u201ccheck wiring.\u201d\n\nThey were inside my apartment for maybe 20 minutes.\n\nI didn\u2019t think much of it.",
+  "voice": "am_michael",
+  "speed": 1.1,
+  "aligner": "mfa",
+  "subtitle_style": {},
+  "background": "minecraft_6.mp4"
+}
