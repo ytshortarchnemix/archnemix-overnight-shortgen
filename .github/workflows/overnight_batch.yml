@@ -61,11 +61,11 @@ jobs:
         run: |
           pip install huggingface_hub --quiet
           python3 << 'EOF'
+          import json, os, glob, shutil
           from huggingface_hub import hf_hub_download
-          import json, os, glob
 
           token      = "${{ secrets.HF_TOKEN_RE }}"
-          repo       = "YTShortMakerArchx/BG_VIDS_ARCHX_YT"
+          repo       = "${{ secrets.VID_REPO }}"
           batch_name = "${{ steps.find_batch.outputs.batch_name }}"
           manifests  = glob.glob(f"Videos/{batch_name}/*/manifest.json")
 
@@ -73,25 +73,35 @@ jobs:
           for m in manifests:
               try:
                   data = json.load(open(m))
-                  bg   = data.get("background", "minecraft_1.mp4")
+                  bg   = data.get("background", "mc1.mp4")
                   backgrounds_needed.add(bg)
               except Exception as e:
                   print(f"Could not read {m}: {e}")
 
+          print(f"Backgrounds needed: {backgrounds_needed}")
           os.makedirs("backgrounds", exist_ok=True)
 
           for bg in backgrounds_needed:
-              print(f"Downloading {bg}...")
+              print(f"Downloading minecraft/{bg} from {repo}...")
               hf_hub_download(
                   repo_id=repo,
-                  filename=bg,
+                  filename=f"minecraft/{bg}",
                   repo_type="dataset",
                   token=token,
                   local_dir="backgrounds",
               )
+              src = f"backgrounds/minecraft/{bg}"
+              dst = f"backgrounds/{bg}"
+              if os.path.exists(src):
+                  shutil.move(src, dst)
+                  print(f"  Moved to {dst}")
               print(f"  Done: {bg}")
 
-          print(f"Downloaded {len(backgrounds_needed)} background(s): {backgrounds_needed}")
+          mc_dir = "backgrounds/minecraft"
+          if os.path.isdir(mc_dir) and not os.listdir(mc_dir):
+              os.rmdir(mc_dir)
+
+          print(f"All backgrounds ready: {os.listdir('backgrounds')}")
           EOF
 
       - name: Run pipeline
