@@ -1,0 +1,11 @@
+{
+  "claim_code": "ARCHX-VK-0-U-00-IPKD",
+  "batch": "batch1",
+  "submitted_at": "2026-03-07T07:39:43.376702+00:00",
+  "script": "One of the weirdest coincidences that ever happened to me was during a long train trip across the country. I was sitting across from this older guy and we ended up chatting for hours about random stuff like travel, jobs, and technology. At some point he mentioned he used to work for a small manufacturing company in the early 2000s, and the name sounded strangely familiar. I told him my dad used to work at a similar company around that time and said the name. The guy suddenly went quiet and asked what my dad\u2019s name was. Turns out they had worked in the same department nearly twenty years earlier and hadn\u2019t seen each other since my dad left the company. The odds of me randomly sitting across from someone who used to work with my dad on a train hundreds of miles away felt completely ridiculous. When I told my dad later he didn\u2019t believe me at first until the guy actually called him and they spent half an hour catching up like no time had passed.",
+  "voice": "am_michael",
+  "speed": 1.2,
+  "aligner": "mfa",
+  "subtitle_style": {},
+  "background": "minecraft_3.mp4"
+}
