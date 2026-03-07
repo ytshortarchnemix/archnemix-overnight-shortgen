@@ -1,0 +1,11 @@
+{
+  "claim_code": "ARCHX-RG-0-I-00-PHEE",
+  "batch": "batch1",
+  "submitted_at": "2026-03-07T07:38:52.996419+00:00",
+  "script": "Back when I was in college I had a part-time job working at a small electronics store in a mall. One afternoon a guy came in holding a completely shattered laptop and asked if we could \u201crecover the WiFi.\u201d I assumed he meant the files, so I asked if he needed data recovery. He looked confused and said no, he just wanted the WiFi that used to come from the laptop because it stopped working after he dropped it down the stairs. After a few minutes of conversation I realized he genuinely believed WiFi was something physically stored inside the laptop that leaked out like a signal tower. I tried explaining how routers work and that the laptop only connects to WiFi, it doesn\u2019t produce it, but he left still looking unconvinced. About an hour later he came back with a brand new router from another store and asked me where to \u201cpour the WiFi into the laptop.\u201d That was the moment I realized retail jobs require a completely different level of patience than any class ever prepared me for.",
+  "voice": "af_sky",
+  "speed": 1.2,
+  "aligner": "mfa",
+  "subtitle_style": {},
+  "background": "minecraft_6.mp4"
+}
