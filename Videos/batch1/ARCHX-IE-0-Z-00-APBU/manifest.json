@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-IE-0-Z-00-APBU",
+  "batch": "batch1",
+  "submitted_at": "2026-03-09T11:01:50.335555+00:00",
+  "script": "I never intended to spend the night in the old mill at the edge of town, but a dare from a friend and my own curiosity got the better of me one late October evening. The mill had been abandoned for over fifty years, its windows shattered, the roof partly caved in, and vines crawling up the sides like dark fingers. Everyone in town had stories about it: strange lights at night, shadows moving behind broken windows, and whispers drifting through the empty rooms if you got too close. I arrived just before sunset, the sky a bruised mix of purple and orange, the wind cold enough to make me pull my jacket tighter. Pushing open the splintered door, I stepped inside and immediately smelled the damp rot of mold and old wood. My flashlight cut through the darkness, revealing beams cracked with age, dust-covered sacks, and rusted machinery frozen in place. As I explored, I heard a faint creak behind me and froze, heart hammering, convinced it was a branch in the wind. But the sound came again, deeper inside the mill, slow and deliberate. I followed it to the top floor where the old grinding wheels sat silent. There, in the corner, I saw a shadow that didn\u2019t belong\u2014tall and thin, its outline flickering as if it struggled to stay solid. When it turned toward me, I saw the space where its eyes should have been was an endless void, darker than the shadows around it. I tried to speak but couldn\u2019t. When I stepped back, the figure glided closer across the creaking floorboards. Panic hit me and I turned to run, but the stairwell behind me seemed longer than before, the walls strangely tight. My flashlight flickered and died, leaving only a faint glow coming from the shadow itself, radiating a cold that made my skin ache. I stumbled through the dark, hands scraping against beams and rusted metal, and every step was followed by another creak behind me, perfectly matching my pace. I reached the main exit only to find the door gone, replaced by a wall of rotting wood. I pounded on it in terror, but it wouldn\u2019t move. When I turned around, the shadow was closer\u2014and now there were others, tall thin shapes drifting toward me silently. I backed away until I remembered the loose hatch in the floor leading to the basement. I dropped through it just as the shapes reached the top floor, landing hard on cold stone. Down there the darkness felt heavier, the sound of dripping water echoing through the room. I crawled along the floor, following a faint draft until I found a small side door. I shoved it open and tumbled outside into the cold night air, gasping and shaking. When I looked back, the mill stood quiet and empty under the moonlight, as if nothing had ever been inside at all. I\u2019ve never returned, but I can\u2019t shake the feeling that something in that mill is still waiting patiently for the next person curious enough to walk through its door.",
+  "voice": "am_michael",
+  "speed": 1.2,
+  "aligner": "qwen",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 130,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 17,
+    "position": "middle"
+  },
+  "background": "minecraft_6.mp4"
+}
