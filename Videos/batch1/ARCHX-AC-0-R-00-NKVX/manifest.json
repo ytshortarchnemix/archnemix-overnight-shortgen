@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-AC-0-R-00-NKVX",
+  "batch": "batch1",
+  "submitted_at": "2026-03-09T11:12:43.959973+00:00",
+  "script": "When I first moved into my current house I started noticing that my trash cans were always slightly moved in the morning, like a few feet from where I left them. At first I thought it was just the wind or maybe the garbage collectors being careless. But then one night I happened to look outside around 3 AM and saw a raccoon standing on top of the lid like it was trying to break into a vault. The thing had clearly been doing this for weeks and had developed a whole routine: climb the side, jump on the lid, try to pry it open, fail, then drag the can a few inches while trying again. The funniest part was that it looked genuinely annoyed when the lid wouldn\u2019t budge, like it was offended by my trash security. I eventually had to start using bungee cords to keep the lid shut, and for a few nights the raccoon would still come by, stare at the cords, and then just walk away like it was judging my life choices.",
+  "voice": "af_sky",
+  "speed": 1.2,
+  "aligner": "qwen",
+  "subtitle_style": {
+    "font": "Impact",
+    "fontsize": 148,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#3F65FF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#07004A",
+    "outline_thickness": 14,
+    "position": "middle"
+  },
+  "background": "minecraft_3.mp4"
+}
