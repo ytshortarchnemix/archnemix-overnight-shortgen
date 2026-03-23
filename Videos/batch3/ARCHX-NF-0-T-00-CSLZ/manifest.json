@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-NF-0-T-00-CSLZ",
+  "batch": "batch3",
+  "submitted_at": "2026-03-23T18:48:00.598848+00:00",
+  "script": "Around 1:50 AM, everything was normal.\nServers humming, lights steady, nothing unusual.\nAt 2:10 AM, I started getting nervous.\nI kept checking the clock every few seconds.\n2:13 AM came.\nNothing.\nI actually felt relieved for a moment.\nThen at exactly 2:14 AM, the lights flickered.\nNot just once.\nThey flickered in a pattern.\nThen everything went completely dark.\nAll the servers shut down at the same time.\nAnd for a few seconds, there was total silence.\nWhen the power came back, I rushed to the old server.\nIt was still running.\nLike nothing had happened.\nSo I checked the backup folders again.\nThere was a new one.\nDated with the current day.\nInside it was another file.\nAlso called \u201cincident_report.txt\u201d.\nI opened it.\nIt described exactly what had just happened.\nEvery detail.\nEven mentioned that I had stayed late to witness it.\nThat\u2019s when I noticed the last line.",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "minecraft_1.mp4"
+}
