@@ -1,0 +1,27 @@
+{
+  "claim_code": "ARCHX-XM-0-O-00-IBBK",
+  "batch": "batch1",
+  "submitted_at": "2026-03-23T18:35:00.324795+00:00",
+  "script": "A few years ago I ordered a late night rideshare after hanging out with some friends.\nIt was around midnight and the streets were mostly empty.\nI got the notification that my driver had arrived, so I walked outside.\nA car was waiting at the curb with the same model and color as the one in the app.\nI opened the back door and got in.\nThe driver didn\u2019t say anything, just started driving.\nAfter a minute I tried making small talk and asked how his night was going.\nHe didn\u2019t respond.",
+  "voice": "am_adam",
+  "speed": 1.2,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Impact",
+    "fontsize": 124,
+    "bold": true,
+    "color_mode": "mix",
+    "colors": [
+      "#FF0000",
+      "#FFFF00",
+      "#FF9F0A"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 17,
+    "position": "middle",
+    "mix_base_count": 3,
+    "mix_pop_count": 1
+  },
+  "background": "minecraft_6.mp4"
+}
