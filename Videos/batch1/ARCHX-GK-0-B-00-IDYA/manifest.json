@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-GK-0-B-00-IDYA",
+  "batch": "batch1",
+  "submitted_at": "2026-03-23T19:19:08.323842+00:00",
+  "script": "Then at exactly 2:14 AM, the lights flickered.\nNot just once.\nThey flickered in a pattern.\nThen everything went completely dark.\nAll the servers shut down at the same time.\nAnd for a few seconds, there was total silence.\nWhen the power came back, I rushed to the old server.\nIt was still running.\nLike nothing had happened.\nIt described exactly what had just happened.\nEvery detail.\nEven mentioned that I had stayed late to witness it.\nThat\u2019s when I noticed the last line.",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Impact",
+    "fontsize": 169,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#B20000"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#1E0000",
+    "outline_thickness": 16,
+    "position": "middle"
+  },
+  "background": "minecraft_1.mp4"
+}
