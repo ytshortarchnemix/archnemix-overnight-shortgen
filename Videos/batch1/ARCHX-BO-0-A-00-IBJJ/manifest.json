@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-BO-0-A-00-IBJJ",
+  "batch": "batch1",
+  "submitted_at": "2026-03-25T09:04:38.417796+00:00",
+  "script": "So this happened when I was doing freelance IT work for a small company.\nThey didn\u2019t have much security, just a basic server room and a couple of office PCs.\nMy job was simple: upgrade their backup system and make sure everything was being stored correctly.\nThey had this one old server that hadn\u2019t been touched in years.\nNo one even remembered what it was for, but it was still running.\nNaturally, I started there.",
+  "voice": "am_michael",
+  "speed": 1.2,
+  "aligner": "qwen",
+  "subtitle_style": {
+    "font": "Oswald",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#eeff00"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "middle"
+  },
+  "background": "minecraft_4.mp4"
+}
