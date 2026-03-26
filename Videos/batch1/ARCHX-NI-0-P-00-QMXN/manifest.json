@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-NI-0-P-00-QMXN",
+  "batch": "batch1",
+  "submitted_at": "2026-03-26T13:24:34.321871+00:00",
+  "script": "My sister had her first kid last year and gave me her old baby monitor \u201cjust in case I ever needed it.\u201d\nI didn\u2019t have kids, but I figured it might be useful as a cheap indoor camera.\nI set it up in my living room so I could check on my dog while I was away.\nFor months it worked perfectly.\nThen one night, around 3 AM, I woke up to the monitor buzzing.\nAt first I thought my dog was barking or moving around.\nBut when I looked at the screen, my dog was asleep on the couch.\nStill, I kept hearing faint noises.\nA rhythmic tapping.\nThen a soft whisper.\nI couldn\u2019t make out any words, so I turned the volume up.\nThe whisper became clearer.\nA woman's voice saying, \u201cCome here.\u201d\nI jumped up and ran to the living room.\nNo one was there.\nMy dog didn\u2019t even wake up.\nI unplugged the monitor and went back to bed shaken.\nThe next morning I checked its event log.\nIt showed a 19-second audio clip recorded at 3:06 AM.\nWhen I played it back, the whisper was there again.\nOnly this time, at the end of the clip, the voice said,\n\u201cI know you can hear me now.\u201d\nI threw the monitor away that same day.",
+  "voice": "af_sarah",
+  "speed": 1.1,
+  "aligner": "qwen",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "minecraft_5.mp4"
+}
