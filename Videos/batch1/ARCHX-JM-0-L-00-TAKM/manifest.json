@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-JM-0-L-00-TAKM",
+  "batch": "batch1",
+  "submitted_at": "2026-03-26T09:32:25.846174+00:00",
+  "script": "fuck",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "minecraft_1.mp4"
+}
