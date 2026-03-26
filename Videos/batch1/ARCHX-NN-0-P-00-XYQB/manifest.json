@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-NN-0-P-00-XYQB",
+  "batch": "batch1",
+  "submitted_at": "2026-03-26T13:24:34.321871+00:00",
+  "script": "Back when I was in college, my laptop had this annoying issue where the keyboard randomly typed extra characters.\nMost of the time it was just gibberish, so I assumed the keyboard was wearing out.\nOne night I was finishing an essay at around 2 AM.\nEvery few minutes my screen would fill with random letters like \u201casdlfkajsd.\u201d\nI kept deleting them and working.\nThen it typed something different.\nNot gibberish.\nA full sentence: \u201cARE YOU ALONE?\u201d\nI stared at the screen, confused.\nI backspaced it and kept typing.\nA minute later, new text appeared: \u201cWHY ARE YOU IGNORING ME?\u201d\nI closed all my programs and restarted the laptop.\nAs soon as it booted, more text appeared on a blank screen: \u201cDON\u2019T MAKE ME ASK AGAIN.\u201d\nI slammed the lid shut.\nAfter a while I opened it again.\nNothing typed this time, but all the lights in my dorm room were off even though I never turned them off.\nI shut the laptop down and left it unplugged for two days.\nWhen I finally turned it on again, everything worked normally.\nNo typing.\nNo weird messages.\nBut in my Documents folder, there was a new file.\nJust one line inside it:\n\u201cTHANK YOU FOR LISTENING.\u201d",
+  "voice": "am_michael",
+  "speed": 1.3,
+  "aligner": "qwen",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "minecraft_6.mp4"
+}
