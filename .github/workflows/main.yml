@@ -13,27 +13,31 @@ jobs:
           username: ${{ secrets.CR_USER }}
           password: ${{ secrets.CR_PAT }}
 
-      - name: Pull and check image size
+      - name: Pull image
         run: |
-          echo "Pulling image..."
           docker pull ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest
 
-          echo ""
+      - name: Check image size
+        run: |
           echo "============================================================"
           echo "IMAGE SIZE REPORT"
           echo "============================================================"
 
           BYTES=$(docker image inspect ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest --format='{{.Size}}')
-          MB=$(echo "scale=2; $BYTES/1024/1024" | bc)
-          GB=$(echo "scale=3; $BYTES/1024/1024/1024" | bc)
+          echo "Raw bytes: $BYTES"
 
-          echo "Uncompressed size: ${MB} MB (${GB} GB)"
+          python3 -c "
+          b = $BYTES
+          print(f'Uncompressed size: {b/1024/1024:.1f} MB')
+          print(f'Uncompressed size: {b/1024/1024/1024:.3f} GB')
+          "
+
           echo ""
           echo "Layer breakdown:"
           docker history ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest \
-            --format "{{.Size}}\t{{.CreatedBy}}" \
-            --no-trunc | head -30
+            --format "{{.Size}}\t{{.CreatedBy}}" | head -30
+
           echo ""
-          echo "Runner disk space remaining:"
+          echo "Runner disk after pull:"
           df -h /
           echo "============================================================"
