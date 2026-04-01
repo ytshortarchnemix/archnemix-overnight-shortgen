@@ -76,11 +76,11 @@ jobs:
               "minecraft_4.mp4": "mc4.mp4",
               "minecraft_5.mp4": "mc5.mp4",
               "minecraft_6.mp4": "mc6.mp4",
-              "ss_1.mp4": "ss_1.mp4",
-              "ss_2.mp4": "ss_2.mp4",
-              "ss_3.mp4": "ss_3.mp4",
-              "ss_4.mp4": "ss_4.mp4",
-              "ss_5.mp4": "ss_5.mp4",
+              "ss_1.mp4": "ss1.mp4",
+              "ss_2.mp4": "ss2.mp4",
+              "ss_3.mp4": "ss3.mp4",
+              "ss_4.mp4": "ss4.mp4",
+              "ss_5.mp4": "ss5.mp4",
           }
 
           backgrounds_needed = set()
@@ -97,7 +97,7 @@ jobs:
           os.makedirs("backgrounds", exist_ok=True)
 
           for bg in backgrounds_needed:
-              if bg.startswith("ss_"):
+              if bg.startswith("ss"):
                   hf_path = f"subwaysurfers/{bg}"
               else:
                   hf_path = f"minecraft/{bg}"
