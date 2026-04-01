@@ -69,6 +69,7 @@ jobs:
           batch_name = "${{ steps.find_batch.outputs.batch_name }}"
           manifests  = glob.glob(f"Videos/{batch_name}/*/manifest.json")
 
+          # Maps: container-expected name → HF filename on dataset
           bg_name_map = {
               "minecraft_1.mp4": "mc1.mp4",
               "minecraft_2.mp4": "mc2.mp4",
@@ -83,24 +84,29 @@ jobs:
               "ss_5.mp4": "ss5.mp4",
           }
 
-          backgrounds_needed = set()
+          # Collect: { container_name -> hf_filename }
+          backgrounds_needed = {}
           for m in manifests:
               try:
-                  data   = json.load(open(m))
-                  bg_raw = data.get("background", "mc1.mp4")
-                  bg     = bg_name_map.get(bg_raw, bg_raw)
-                  backgrounds_needed.add(bg)
+                  data           = json.load(open(m))
+                  container_name = data.get("background", "minecraft_1.mp4")
+                  hf_filename    = bg_name_map.get(container_name, container_name)
+                  backgrounds_needed[container_name] = hf_filename
               except Exception as e:
                   print(f"Could not read {m}: {e}")
 
           print(f"Backgrounds needed: {backgrounds_needed}")
           os.makedirs("backgrounds", exist_ok=True)
 
-          for bg in backgrounds_needed:
-              if bg.startswith("ss"):
-                  hf_path = f"subwaysurfers/{bg}"
+          for container_name, hf_filename in backgrounds_needed.items():
+              # Determine HF subfolder by HF filename prefix
+              if hf_filename.startswith("ss"):
+                  hf_path = f"subwaysurfers/{hf_filename}"
+                  subdir  = "backgrounds/subwaysurfers"
               else:
-                  hf_path = f"minecraft/{bg}"
+                  hf_path = f"minecraft/{hf_filename}"
+                  subdir  = "backgrounds/minecraft"
+
               print(f"Downloading {hf_path} from {repo}...")
               hf_hub_download(
                   repo_id=repo,
@@ -109,15 +115,21 @@ jobs:
                   token=token,
                   local_dir="backgrounds",
               )
-              # Move out of subfolder to backgrounds/ root
-              subdir = "backgrounds/subwaysurfers" if bg.startswith("ss_") else "backgrounds/minecraft"
-              src = f"{subdir}/{bg}"
-              dst = f"backgrounds/{bg}"
+
+              # Move from subfolder to backgrounds/ root, renamed to container_name
+              src = f"{subdir}/{hf_filename}"
+              dst = f"backgrounds/{container_name}"
+
               if os.path.exists(src):
                   shutil.move(src, dst)
-                  print(f"  Moved to {dst}")
-              print(f"  Done: {bg}")
+                  print(f"  Moved {src} → {dst}")
+              else:
+                  print(f"  ERROR: expected file not found at {src}")
+                  print(f"  Subdir contents: {os.listdir(subdir) if os.path.isdir(subdir) else 'DIR NOT FOUND'}")
 
+              print(f"  Done: {container_name}")
+
+          # Clean up empty subdirs
           for subdir in ["backgrounds/minecraft", "backgrounds/subwaysurfers"]:
               if os.path.isdir(subdir) and not os.listdir(subdir):
                   os.rmdir(subdir)
