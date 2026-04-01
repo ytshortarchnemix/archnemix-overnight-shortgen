@@ -1,0 +1,39 @@
+name: Check Docker Image Size
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.CR_USER }}
+          password: ${{ secrets.CR_PAT }}
+
+      - name: Pull and check image size
+        run: |
+          echo "Pulling image..."
+          docker pull ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest
+
+          echo ""
+          echo "============================================================"
+          echo "IMAGE SIZE REPORT"
+          echo "============================================================"
+
+          BYTES=$(docker image inspect ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest --format='{{.Size}}')
+          MB=$(echo "scale=2; $BYTES/1024/1024" | bc)
+          GB=$(echo "scale=3; $BYTES/1024/1024/1024" | bc)
+
+          echo "Uncompressed size: ${MB} MB (${GB} GB)"
+          echo ""
+          echo "Layer breakdown:"
+          docker history ghcr.io/${{ secrets.CR_USER }}/archnemix-shortgen-core-reddit:latest \
+            --format "{{.Size}}\t{{.CreatedBy}}" \
+            --no-trunc | head -30
+          echo ""
+          echo "Runner disk space remaining:"
+          df -h /
+          echo "============================================================"
