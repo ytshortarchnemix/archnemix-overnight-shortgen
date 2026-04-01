@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-RW-0-T-00-EPLF",
+  "batch": "batch1",
+  "submitted_at": "2026-04-01T12:13:49.284273+00:00",
+  "script": "Every few minutes my screen would fill with random letters like \u201casdlfkajsd.\u201d",
+  "voice": "af_sarah",
+  "speed": 1.1,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "middle"
+  },
+  "background": "minecraft_1.mp4"
+}
