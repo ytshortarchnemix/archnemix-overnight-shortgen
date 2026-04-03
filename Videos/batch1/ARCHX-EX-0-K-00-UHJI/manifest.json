@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-EX-0-K-00-UHJI",
+  "batch": "batch1",
+  "submitted_at": "2026-04-03T13:09:15.096835+00:00",
+  "script": "Back when I was in college, my laptop had this annoying issue where the keyboard randomly typed extra characters.\nMost of the time it was just gibberish, so I assumed the keyboard was wearing out.\nOne night I was finishing an essay at around 2 AM.",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "ss_5.mp4"
+}
