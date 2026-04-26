@@ -1,0 +1,23 @@
+{
+  "claim_code": "ARCHX-MI-0-B-00-ULOP",
+  "batch": "batch1",
+  "submitted_at": "2026-04-26T15:13:53.989077+00:00",
+  "script": "Hello How are you and\nWhat the heck are you doing\nare you even good at this\ni think you are not",
+  "voice": "am_michael",
+  "speed": 1.0,
+  "aligner": "mfa",
+  "subtitle_style": {
+    "font": "Arial Black",
+    "fontsize": 90,
+    "bold": true,
+    "color_mode": "solid",
+    "colors": [
+      "#FFFFFF"
+    ],
+    "outline_enabled": true,
+    "outline_color": "#000000",
+    "outline_thickness": 4,
+    "position": "bottom"
+  },
+  "background": "minecraft_1.mp4"
+}
